@@ -19,7 +19,7 @@ class ProductManagerTest {
     private Smartphone smartphone2 = new Smartphone(4, "smartphone2", 100, "smartphone22");
 
     @Test
-    public void shouldTest() {
+    public void shouldProductSearch() {
         product.add(book1);
         product.add(book2);
 
