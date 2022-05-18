@@ -1,4 +1,4 @@
-package ru.netologu.product;
+package ru.netology.product;
 
 public class Smartphone extends Product {
     protected String manufacturer;
