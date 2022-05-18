@@ -1,6 +1,6 @@
 package ru.netologu.product;
 
-public class Smartphone extends Product{
+public class Smartphone extends Product {
     protected String manufacturer;
 
     public Smartphone(int id, String name, int cost, String manufacturer) {

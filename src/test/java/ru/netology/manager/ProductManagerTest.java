@@ -23,7 +23,7 @@ class ProductManagerTest {
         product.add(book1);
         product.add(book2);
 
-        Product[] actual = product.searchBy( "book1" );
+        Product[] actual = product.searchBy("book1");
         Product[] expectad = new Product[]{book1};
 
         assertArrayEquals(actual, expectad);

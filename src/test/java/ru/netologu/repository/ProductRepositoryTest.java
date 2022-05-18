@@ -16,11 +16,11 @@ class ProductRepositoryTest {
     private Smartphone smartphone2 = new Smartphone(4, "smartphone2", 100, "smartphone2");
 
     @Test
-    public void  shouldSaveProduct() {
+    public void shouldSaveProduct() {
         repository.save(book1);
 
         Product[] actual = repository.getAllSavedProducts();
-        Product[] expected = new Product[] {book1};
+        Product[] expected = new Product[]{book1};
 
         assertArrayEquals(actual, expected);
     }
