@@ -1,9 +1,12 @@
 package ru.netologu.product;
 
+import ru.netologu.repository.ProductRepository;
+
 public class Product {
     protected int id;
     protected String name;
     protected int cost;
+    protected ProductRepository repository;
 
     public Product(int id, String name, int cost) {
         this.id = id;
@@ -33,5 +36,15 @@ public class Product {
 
     public void setCost(int cost) {
         this.cost = cost;
+    }
+
+
+
+    public boolean matches(String search) {
+        if (getName().contains(search)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
