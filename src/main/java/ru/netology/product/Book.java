@@ -1,4 +1,4 @@
-package ru.netologu.product;
+package ru.netology.product;
 
 public class Book extends Product {
     protected String author;
@@ -13,5 +13,5 @@ public class Book extends Product {
             return true;
         }
         return this.author.equalsIgnoreCase(search);
-        }
+    }
 }

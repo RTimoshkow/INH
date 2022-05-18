@@ -1,6 +1,6 @@
-package ru.netologu.repository;
+package ru.netology.repository;
 
-import ru.netologu.product.Product;
+import ru.netology.product.Product;
 
 public class ProductRepository {
     Product[] products = new Product[0];
@@ -22,7 +22,7 @@ public class ProductRepository {
         int length = products.length - 1;
         Product[] tmp = new Product[length];
         int index = 0;
-        for (Product product: products) {
+        for (Product product : products) {
             if (product.getId() != id) {
                 tmp[index] = product;
                 index++;

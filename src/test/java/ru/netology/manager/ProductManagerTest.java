@@ -1,12 +1,11 @@
 package ru.netology.manager;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ru.netologu.product.Book;
-import ru.netologu.product.Product;
-import ru.netologu.product.Smartphone;
-import ru.netologu.repository.ProductRepository;
+import ru.netology.product.Book;
+import ru.netology.product.Product;
+import ru.netology.product.Smartphone;
+import ru.netology.repository.ProductRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -30,7 +29,7 @@ class ProductManagerTest {
 
     @Test
     public void shouldBookSearchByAutour() {
-        Product[] actual = product.searchBy( "book22" );
+        Product[] actual = product.searchBy("book22");
         Product[] expectad = new Product[]{book2};
 
         assertArrayEquals(actual, expectad);
@@ -38,7 +37,7 @@ class ProductManagerTest {
 
     @Test
     public void shouldSmartphoneSearchByManufacturer() {
-        Product[] actual = product.searchBy( "smartphone11" );
+        Product[] actual = product.searchBy("smartphone11");
         Product[] expectad = new Product[]{smartphone1};
 
         assertArrayEquals(actual, expectad);
@@ -46,7 +45,7 @@ class ProductManagerTest {
 
     @Test
     public void shouldBookSearchByName() {
-        Product[] actual = product.searchBy( "book1" );
+        Product[] actual = product.searchBy("book1");
         Product[] expectad = new Product[]{book1};
 
         assertArrayEquals(actual, expectad);
@@ -54,7 +53,7 @@ class ProductManagerTest {
 
     @Test
     public void shouldSmartphoneSearchByName() {
-        Product[] actual = product.searchBy( "smartphone2" );
+        Product[] actual = product.searchBy("smartphone2");
         Product[] expectad = new Product[]{smartphone2};
 
         assertArrayEquals(actual, expectad);

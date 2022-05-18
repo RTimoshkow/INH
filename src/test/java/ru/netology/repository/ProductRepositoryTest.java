@@ -1,9 +1,10 @@
-package ru.netologu.repository;
+package ru.netology.repository;
 
 import org.junit.jupiter.api.Test;
-import ru.netologu.product.Book;
-import ru.netologu.product.Product;
-import ru.netologu.product.Smartphone;
+import ru.netology.product.Book;
+import ru.netology.product.Product;
+import ru.netology.product.Smartphone;
+import ru.netology.repository.ProductRepository;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
@@ -16,11 +17,11 @@ class ProductRepositoryTest {
     private Smartphone smartphone2 = new Smartphone(4, "smartphone2", 100, "smartphone2");
 
     @Test
-    public void  shouldSaveProduct() {
+    public void shouldSaveProduct() {
         repository.save(book1);
 
         Product[] actual = repository.getAllSavedProducts();
-        Product[] expected = new Product[] {book1};
+        Product[] expected = new Product[]{book1};
 
         assertArrayEquals(actual, expected);
     }

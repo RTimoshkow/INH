@@ -1,6 +1,6 @@
-package ru.netologu.product;
+package ru.netology.product;
 
-import ru.netologu.repository.ProductRepository;
+import ru.netology.repository.ProductRepository;
 
 public class Product {
     protected int id;
@@ -37,7 +37,6 @@ public class Product {
     public void setCost(int cost) {
         this.cost = cost;
     }
-
 
 
     public boolean matches(String search) {
