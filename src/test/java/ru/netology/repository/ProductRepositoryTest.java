@@ -1,12 +1,13 @@
 package ru.netology.repository;
 
 import org.junit.jupiter.api.Test;
+import ru.netology.exception.NotFoundException;
 import ru.netology.product.Book;
 import ru.netology.product.Product;
 import ru.netology.product.Smartphone;
 import ru.netology.repository.ProductRepository;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ProductRepositoryTest {
 
@@ -33,7 +34,7 @@ class ProductRepositoryTest {
         repository.save(smartphone1);
         repository.save(smartphone2);
 
-        int removeId = 3;
+        int removeId = 10;
         repository.removeById(removeId);
 
 
@@ -42,4 +43,17 @@ class ProductRepositoryTest {
 
         assertArrayEquals(actual, expected);
     }
+
+    @Test
+    public void shouldExceptionalCases() {
+        repository.save(book1);
+        repository.save(book2);
+        repository.save(smartphone1);
+        repository.save(smartphone2);
+
+        assertThrows(NotFoundException.class, ()->{
+            repository.removeById(10);
+        });
+    }
+
 }
