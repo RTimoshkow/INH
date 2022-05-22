@@ -4,7 +4,6 @@ import ru.netology.exception.AlreadyExistsException;
 import ru.netology.exception.NotFoundException;
 import ru.netology.product.Product;
 
-import static com.sun.tools.javac.jvm.ByteCodes.ret;
 
 public class ProductRepository {
     Product[] products = new Product[0];
