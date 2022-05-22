@@ -1,6 +1,7 @@
 package ru.netology.repository;
 
 import org.junit.jupiter.api.Test;
+import ru.netology.exception.AlreadyExistsException;
 import ru.netology.exception.NotFoundException;
 import ru.netology.product.Book;
 import ru.netology.product.Product;
@@ -20,11 +21,21 @@ class ProductRepositoryTest {
     @Test
     public void shouldSaveProduct() {
         repository.save(book1);
+        repository.save(book2);
 
         Product[] actual = repository.getAllSavedProducts();
         Product[] expected = new Product[]{book1};
 
         assertArrayEquals(actual, expected);
+    }
+
+    @Test
+    public void shouldIdenticalId() {
+
+        assertThrows(AlreadyExistsException.class, ()->{
+            repository.save(book1);
+            repository.save(book1);
+        });
     }
 
     @Test

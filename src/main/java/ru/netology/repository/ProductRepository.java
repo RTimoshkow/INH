@@ -1,5 +1,6 @@
 package ru.netology.repository;
 
+import ru.netology.exception.AlreadyExistsException;
 import ru.netology.exception.NotFoundException;
 import ru.netology.product.Product;
 
@@ -11,6 +12,9 @@ public class ProductRepository {
     public void save(Product product) {
         int length = products.length + 1;
         Product[] tmp = new Product[length];
+        if (product.getId() == product.getId()) {
+            throw new AlreadyExistsException("Элемент с таким id уже существует");
+        }
         System.arraycopy(products, 0, tmp, 0, products.length);
         int lastIndex = tmp.length - 1;
         tmp[lastIndex] = product;
