@@ -45,7 +45,7 @@ class ProductRepositoryTest {
         repository.save(smartphone1);
         repository.save(smartphone2);
 
-        int removeId = 3;
+        int removeId = 24;
         repository.removeById(removeId);
 
 
