@@ -24,7 +24,7 @@ class ProductRepositoryTest {
         repository.save(book2);
 
         Product[] actual = repository.getAllSavedProducts();
-        Product[] expected = new Product[]{book1};
+        Product[] expected = new Product[]{book1, book2};
 
         assertArrayEquals(actual, expected);
     }
@@ -45,7 +45,7 @@ class ProductRepositoryTest {
         repository.save(smartphone1);
         repository.save(smartphone2);
 
-        int removeId = 10;
+        int removeId = 3;
         repository.removeById(removeId);
 
 

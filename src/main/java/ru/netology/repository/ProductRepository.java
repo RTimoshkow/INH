@@ -9,17 +9,25 @@ import static com.sun.tools.javac.jvm.ByteCodes.ret;
 public class ProductRepository {
     Product[] products = new Product[0];
 
+
     public void save(Product product) {
         int length = products.length + 1;
         Product[] tmp = new Product[length];
-        if (product.getId() == product.getId()) {
-            throw new AlreadyExistsException("Элемент с таким id уже существует");
-        }
         System.arraycopy(products, 0, tmp, 0, products.length);
         int lastIndex = tmp.length - 1;
         tmp[lastIndex] = product;
+        for (int i = 0; i < tmp.length; i++) {
+            for (int i2 = 0; i2 < tmp.length; i2++) {
+                if(i2 == i) continue;
+                if (tmp[i] == tmp[i2]) {
+                    throw new AlreadyExistsException("Элемент с таким id уже существует");
+                }
+            }
+        }
+
         products = tmp;
     }
+
 
     public Product[] getAllSavedProducts() {
         return products;
