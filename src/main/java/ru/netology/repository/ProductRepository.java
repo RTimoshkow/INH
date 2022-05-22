@@ -16,9 +16,9 @@ public class ProductRepository {
         int lastIndex = tmp.length - 1;
         tmp[lastIndex] = product;
         for (int i = 0; i < tmp.length; i++) {
-                if(i == product.getId())  {
-                    throw new AlreadyExistsException("Элемент с таким id уже существует");
-                }
+            if (i == product.getId()) {
+                throw new AlreadyExistsException("Элемент с таким id уже существует");
+            }
         }
 
         products = tmp;

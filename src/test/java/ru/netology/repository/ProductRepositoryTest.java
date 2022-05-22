@@ -32,7 +32,7 @@ class ProductRepositoryTest {
     @Test
     public void shouldIdenticalId() {
 
-        assertThrows(AlreadyExistsException.class, ()->{
+        assertThrows(AlreadyExistsException.class, () -> {
             repository.save(book1);
             repository.save(book1);
         });
@@ -62,7 +62,7 @@ class ProductRepositoryTest {
         repository.save(smartphone1);
         repository.save(smartphone2);
 
-        assertThrows(NotFoundException.class, ()->{
+        assertThrows(NotFoundException.class, () -> {
             repository.removeById(10);
         });
     }
